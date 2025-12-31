@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Makrand — Gen AI ML Engineer|AI Reseachers|Principal Software Engineer|Data Scientist</title>
+  <meta name="description" content="Principal Software Engineer, AI Researchers, Data Scientist, Migration, and Enterprise AI Architect with deep expertise in GenAI, multi-cloud, MLOps, RAG, data migration, and visualization." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0e14;
+      --text: #e6e8eb;
+      --muted: #a9b1ba;
+      --card: #121622;
+      --accent1: #ff6b6b;
+      --accent2: #ffd166;
+      --accent3: #06d6a0;
+      --accent4: #118ab2;
+      --accent5: #8338ec;
+      --shadow: rgba(0,0,0,0.25);
+      --ring: rgba(17,138,178,0.35);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: radial-gradient(1200px 600px at 10% 10%, #121622 0%, #0b0e14 60%, #080b12 100%); color: var(--text); font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* Navbar */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(150%) blur(10px);
+      background: linear-gradient(90deg, rgba(255,107,107,0.08), rgba(17,138,178,0.08), rgba(131,56,236,0.08));
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav .wrap {
+      max-width: 1100px; margin: 0 auto; padding: 14px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.2px;
+    }
+    .brand .logo {
+      width: 28px; height: 28px; border-radius: 8px;
+      background: conic-gradient(from 200deg, var(--accent1), var(--accent2), var(--accent3), var(--accent4), var(--accent5), var(--accent1));
+      box-shadow: 0 4px 12px var(--shadow);
+    }
+    .links { display: flex; align-items: center; gap: 20px; }
+    .links a {
+      padding: 8px 12px; border-radius: 8px; color: var(--muted);
+    }
+    .links a:hover { background: rgba(255,255,255,0.06); color: var(--text); }
+    .call-btn {
+      padding: 10px 14px; border-radius: 10px; font-weight: 600;
+      background: linear-gradient(135deg, var(--accent4), var(--accent3));
+      box-shadow: 0 6px 18px rgba(17,138,178,0.35);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .call-btn:hover { filter: brightness(1.05) saturate(1.05); }
+
+    /* Hero */
+    .hero {
+      max-width: 1100px; margin: 24px auto 0; padding: 30px 20px 24px;
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 24px;
+    }
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px; padding: 22px; box-shadow: 0 20px 60px var(--shadow);
+    }
+    .title {
+      font-size: 32px; line-height: 1.15; margin: 0 0 12px;
+      background: linear-gradient(90deg, var(--accent5), var(--accent4), var(--accent3));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .subtitle { color: var(--muted); margin: 0 0 18px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tag {
+      font-size: 13px; padding: 8px 10px; border-radius: 999px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.10);
+      color: var(--text);
+    }
+    .cta-row { margin-top: 16px; display: flex; gap: 12px; }
+    .cta {
+      padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10); font-weight: 600; color: var(--text);
+    }
+    .cta.primary {
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 10px 24px rgba(255,107,107,0.35);
+    }
+
+    /* Sections */
+    .section {
+      max-width: 1100px; margin: 0 auto; padding: 20px;
+    }
+    .section h2 {
+      font-size: 24px; margin: 24px 0 12px;
+      color: #ffffff;
+      border-left: 4px solid var(--accent4);
+      padding-left: 10px;
+    }
+    .grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .card {
+      background: var(--card); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; padding: 16px; box-shadow: 0 10px 32px var(--shadow);
+    }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .muted { color: var(--muted); }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .links { gap: 12px; }
+      .grid { grid-template-columns: 1fr; }
+      .title { font-size: 26px; }
+    }
+
+    /* Accent separators */
+    .divider {
+      height: 1px; background: linear-gradient(90deg, rgba(255,107,107,0.35), rgba(17,138,178,0.35), rgba(131,56,236,0.35));
+      margin: 24px 0;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 24px; padding: 24px 20px; text-align: center; color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(90deg, rgba(6,214,160,0.06), rgba(255,209,102,0.06), rgba(131,56,236,0.06));
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="nav">
+    <div class="wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>Makrand's Profile</div>
+      </div>
+      <div class="links">
+        <a href="#home">Home</a>
+        <a href="#profile">Profile</a>
+        <a href="#projects">Projects</a>
+        <a class="call-btn" href="tel:+919930102832" aria-label="Call me">Call Me</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" class="hero">
+    <div class="hero-card">
+      <h1 class="title">Principal Software Engineer • Data Scientist • Enterprise AI Architect</h1>
+      <p class="subtitle">I design and lead end-to-end engineering for cloud, BI, ELT/ETL, GenAI, and visualization—turning complex systems into scalable, reusable consulting assets.</p>
+      <div class="tags" aria-label="Core expertise tags">
+        <span class="tag">GenAI</span>
+        <span class="tag">LLM Ops</span>
+        <span class="tag">RAG</span>
+        <span class="tag">MLOps</span>
+        <span class="tag">Multi-cloud</span>
+        <span class="tag">Data Migration</span>
+        <span class="tag">Visualization</span>
+        <span class="tag">Kubernetes</span>
+        <span class="tag">ETL/ELT</span>
+        <span class="tag">Azure Synapse</span>
+        <span class="tag">Vertex AI</span>
+        <span class="tag">SageMaker</span>
+      </div>
+      <div class="cta-row">
+        <a class="cta primary" href="#projects">View Projects</a>
+        <a class="cta" href="#profile">Read Profile</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h3 style="margin:0 0 8px;">Based in Daskroi, Gujarat, India</h3>
+      <p class="muted">Focused on modularity, reproducibility, and mentoring—building robust frameworks, playbooks, and UX-forward visualization pipelines.</p>
+      <div class="divider"></div>
+      <ul class="muted" style="list-style:none; padding:0; margin:0;">
+        <li>• Team leadership, debugging, PyTest/JTest/Cypress, CI/CD, DevSecOps</li>
+        <li>• SaaS APIs (REST, GraphQL), MCP servers, agent frameworks</li>
+        <li>• SQL/NoSQL, vector search, data quality and governance (DLP)</li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Profile -->
+  <section id="profile" class="section">
+    <h2>Profile and experience overview</h2>
+
+    <div class="card">
+      <h3>Summary</h3>
+      <p>
+        I have experience as a principal software engineer and data scientist with Aligner, Labeling, LabelBox, Scale AI, GenAI, AG-UI protocol, Vertex Data, Vertex AI, MLOps, RAG, DLP, NLP, neural, ML, labeling, annotation, SageMaker, Bedrock, LLM, LLM Ops, SaaS API, MCP server, and Oracle Cloud. I lead data migration projects for Item Master, Accounts Receivable (AR), and On-Hand Inventory, integrating critical domains with reliability and performance.
+      </p>
+      <div class="divider"></div>
+      <p>
+        I work across SailPoint, LangSmith, Pinecone, WordPress, OpenAI, LangChain, LangGraph, multi-cloud architecture, Microsoft Agent Framework, Rust, Golang, AngularJS, Pydantic, CopilotKit, Google ADK, AWS, Azure AI Foundry, and .NET—designing, developing, and deploying end-to-end data engineering, BI, and cloud ELT/ETL solutions.
+      </p>
+      <p>
+        Strong expertise in Azure Synapse Analytics, Azure Data Factory (ADF), and SQL Server for scalable and performance-optimized pipelines. Mobile and web application development, team leadership, and testing with PyTest, JTest, Cypress and unit testing. Deep learning, machine learning, Python, Django, Flask, FastAPI, RESTful APIs, GraphQL, Flutter, React, React Native, Ruby on Rails, Rust, Java, Docker, Kubernetes, hosting and creative design aligned to UX/UI standards.
+      </p>
+      <p>
+        Databases include SQL, NoSQL, MongoDB, PostgreSQL, Redis, and vector search for GenAI roadmaps. Shell scripting, Bash, Ansible, Terraform, YAML. E‑commerce architecture on GCP, AWS, Azure, Agile, big data, analytics, Kafka, Spark, Grafana, Prometheus, Nginx, VM creation, microservices, GitHub, Trivy, Argo CD, Bootstrap, Tailwind CSS, PHP, HTML/CSS, Web3, Unity, Shopify, HTML5, Node.js, Angular.js, Vue.js, JavaScript, TypeScript, Microsoft Office, and MS Project.
+      </p>
+    </div>
+
+    <div class="grid" style="margin-top:20px;">
+      <div class="card">
+        <h3>Core specialties</h3>
+        <ul class="muted">
+          <li>• GenAI platforms, LLM Ops, RAG, DLP, NLP</li>
+          <li>• Multi-cloud orchestration (AWS, Azure, GCP)</li>
+          <li>• MLOps with Vertex AI, SageMaker, Bedrock</li>
+          <li>• Data migration for ERPs and critical domains</li>
+          <li>• Visualization and UX-forward pipelines</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Engineering strengths</h3>
+        <ul class="muted">
+          <li>• Error-proof APIs: REST, GraphQL, MCP</li>
+          <li>• IaC: Terraform, Ansible, YAML</li>
+          <li>• DevSecOps: Kubernetes, Docker, Trivy, Argo CD</li>
+          <li>• Observability: Grafana, Prometheus</li>
+          <li>• Event systems: Kafka, Spark</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Data and AI stack</h3>
+        <ul class="muted">
+          <li>• Azure Synapse, ADF, SQL Server</li>
+          <li>• PostgreSQL, MongoDB, Redis</li>
+          <li>• Pinecone, vector search</li>
+          <li>• LangChain, LangGraph, OpenAI</li>
+          <li>• Vertex AI, Azure AI Foundry</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <h2>Selected projects</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>GenAI roadmap and vector search</h3>
+        <p class="muted">Designed a reusable GenAI roadmap integrating LLM Ops, RAG pipelines, and vector search (Pinecone/Redis), enabling rapid domain onboarding.</p>
+        <ul class="muted">
+          <li>• Stack: LangChain, LangGraph, OpenAI, Azure AI Foundry</li>
+          <li>• Outcomes: Faster retrieval, robust evaluation, reproducible playbooks</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Critical domain data migration</h3>
+        <p class="muted">Led migration and integration for Item Master, AR, and On-Hand Inventory with strong validations, lineage, and performance benchmarks.</p>
+        <ul class="muted">
+          <li>• Stack: ADF, Synapse, SQL Server, Kafka</li>
+          <li>• Outcomes: Zero-downtime cutovers, audit-ready datasets</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Enterprise SaaS API and MCP server</h3>
+        <p class="muted">Architected REST/GraphQL APIs and MCP server scaffolding with standardized contracts, tests, and CI/CD for multi-tenant SaaS.</p>
+        <ul class="muted">
+          <li>• Stack: FastAPI, Flask, Node.js, Kubernetes, Argo CD</li>
+          <li>• Outcomes: Error-proof interfaces, measurable SLOs</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Visualization pipeline and UX</h3>
+        <p class="muted">Built gridless, smooth visualization interfaces leveraging anti-aliasing, LOD, and mesh refinement, aligned to design vision.</p>
+        <ul class="muted">
+          <li>• Stack: Java/JavaFX, Rust, React, Tailwind CSS</li>
+          <li>• Outcomes: Higher fidelity displays, modular components</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>MLOps with Vertex AI and SageMaker</h3>
+        <p class="muted">Delivered end-to-end ML lifecycle: data prep, training, evaluation, deployment, monitoring, and guardrails with DLP.</p>
+        <ul class="muted">
+          <li>• Stack: Vertex AI, SageMaker, Bedrock, Grafana/Prometheus</li>
+          <li>• Outcomes: Repeatable pipelines, governance-by-design</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Cloud ELT/ETL accelerators</h3>
+        <p class="muted">Published Terraform modules, Helm charts, and runbooks for rapid data pipeline provisioning across AWS/Azure/GCP.</p>
+        <ul class="muted">
+          <li>• Stack: Terraform, Helm, ADF, Synapse, Spark</li>
+          <li>• Outcomes: 40–60% faster setup, consistent compliance</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <h3>Let’s build something bold</h3>
+      <p class="muted">Available for consulting, architectural reviews, MLOps setup, data migration, and visualization pipelines.</p>
+      <div class="cta-row">
+        <a class="cta primary" href="tel:+919930102832">Call Me</a>
+        <a class="cta" href="mailto:makzare1463@gmail.com">Email</a>
+        <a class="cta" href="https://github.com/MakrandMZare" target="_blank" rel="noopener">GitHub</a>
+        <a class="cta" href="https://linkedin.com/in/zaremakrand" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Makrand Zare• Principal Software Engineer & Data Scientist
+  </footer>
+
+  <script>
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
